@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Sending Email') {
             steps {
-                emailext body: 'Build and Test was succeeded', subject: 'Jenkins Job Result', to: 'testemailggl9@gmail.com', from: 'Jenkins'
+                emailext body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', subject: 'Jenkins Job Result', to: 'testemailggl9@gmail.com', from: 'Jenkins'
             }
         }
     }
