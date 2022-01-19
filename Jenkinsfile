@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Sending Email') {
             steps {
-                emailext body: 'Build and Test was succeeded', subject: 'Jenkins Job Result', to: 'testemailggl9@gmail.com'
+                emailext body: "${DEFAULT_CONTENT}", subject: "${DEFAULT_SUBJECT}", to: "testemailggl9@gmail.com", from: "Jenkins"
             }
         }
     }
