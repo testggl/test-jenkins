@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Sending Email') {
             steps {
-                emailext body: "'${env.DEFAULT_CONTENT}'", subject: "'${env.DEFAULT_SUBJECT}'", to: "testemailggl9@gmail.com", from: "Jenkins"
+                emailext body: "'${env.DEFAULT_CONTENT}'", subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!", to: "testemailggl9@gmail.com", from: "Jenkins"
             }
         }
     }
