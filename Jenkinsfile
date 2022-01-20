@@ -12,10 +12,10 @@ pipeline {
                 sh './gradlew test'
             }
         }
-        post {
-            always {
-                emailext body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', subject: 'Jenkins Job Result', to: 'testemailggl9@gmail.com'
-            }
+    }
+    post {
+        always {
+            emailext body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', subject: 'Jenkins Job Result', to: 'testemailggl9@gmail.com'
         }
     }
 }
